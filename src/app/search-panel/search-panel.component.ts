@@ -58,6 +58,8 @@ export class SearchPanelComponent implements OnInit {
     this.account = "";
     this.transactions = [];
     this.disputes = [];
+    this.transactionService.clearCurrentTransactions();
+    this.disputeService.clearCurrentDisputes();
   }
 
   showNewTxnTab(event) {

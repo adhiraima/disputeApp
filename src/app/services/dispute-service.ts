@@ -4,6 +4,7 @@ import {_} from 'underscore';
 
 @Injectable()
 export class DisputeService {
+    private currentDisputes: Dispute[];
     private disputes = [
         {
             "disputeid": "d1",
@@ -62,12 +63,10 @@ export class DisputeService {
       ];
 
       public getDisputes(page: number) : Dispute[] {
-
           let disputesPage = [];
           let beginRange = 0;
           let endRange = 4;
           let pageSize = 4;
-          console.log("passed page", page);
           if (page !== undefined) {
               beginRange = page > 1 ? page * pageSize : page - 1;
               endRange = beginRange + pageSize;
@@ -76,9 +75,9 @@ export class DisputeService {
               }
           }
           for (let i = beginRange; i < pageSize; i++) {
-            console.log("push >> ", this.disputes[i]);
             disputesPage.push(this.disputes[i]);
           }
+          this.currentDisputes = disputesPage;
           return disputesPage;
       }
 
@@ -92,6 +91,14 @@ export class DisputeService {
                 dispute.status = "RESOLVED";
             }
         });
+      }
+
+      public getCurrentDisputes(): Dispute[] {
+        return this.currentDisputes;
+      }
+
+      public clearCurrentDisputes() {
+        this.currentDisputes = new Array<Dispute>();
       }
 
 }

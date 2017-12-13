@@ -4,6 +4,7 @@ import {_} from 'underscore';
 
 @Injectable()
 export class TransactionService {
+    private currentTransactions: Transaction[];
     private transactions = [
         {
           "trxid": "tr1", 
@@ -139,10 +140,10 @@ export class TransactionService {
       ]
 
       public getTransactions(page: number): Transaction[] {
-        let trxnPage = [];
+        let trxnPage = new Array<Transaction>();
         let beginRange = 0;
         let endRange = 4;
-        let pageSize = 4;
+        let pageSize = 10;
         console.log("passed page", page);
         if (page !== undefined) {
             beginRange = page > 1 ? page * pageSize : page - 1;
@@ -152,10 +153,10 @@ export class TransactionService {
             }
         }
         for (let i = beginRange; i < pageSize; i++) {
-          console.log("push >> ", this.transactions[i]);
           trxnPage.push(this.transactions[i]);
         }
-          return this.transactions;
+        this.currentTransactions = trxnPage;
+        return trxnPage;
       }
 
       public addTransaction(transaction: Transaction) {
@@ -172,4 +173,11 @@ export class TransactionService {
         return trxn;
       }
 
+      public getCurrentTransactions(): Transaction[] {
+        return this.currentTransactions;
+      }
+
+      public clearCurrentTransactions() {
+        this.currentTransactions = new Array<Transaction>();
+      }
 }

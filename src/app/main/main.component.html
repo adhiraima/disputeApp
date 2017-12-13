@@ -1,13 +1,13 @@
-<p-tabView>
-  <div *ngFor=" let key of keys();">
-    <p-tabPanel header="{{key}}" [closable]="key !== 'search'" [selected]="key === selectedPanel" (click)="selectTab(key)">
-      <div *ngIf="panels[key] === 'searchPanel'">
+<p-tabView (onChange)="selectTab($event)">
+  <div *ngFor="let key of keys();">
+    <p-tabPanel header="{{key}}" [closable]="key !== 'search'" [selected]="key === selectedPanel">
+      <div *ngIf="panels[key] === 'searchPanel' && key === selectedPanel">
         <app-search-panel (openMainTxnTab)="showNewTxnTab($event)" (openMainDispTab)="showNewDispTab($event)"></app-search-panel>
       </div>
-      <div *ngIf="panels[key] === 'transactionPanel'">
+      <div *ngIf="key.startsWith('txn') && key === selectedPanel">
         <app-transaction-panel></app-transaction-panel>
       </div>
-      <div *ngIf="panels[key] === 'disputePanel'">
+      <div *ngIf="key.startsWith('dispute') && key === selectedPanel">
         <app-dispute-panel></app-dispute-panel>
       </div>
     </p-tabPanel>

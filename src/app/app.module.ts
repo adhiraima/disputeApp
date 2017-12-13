@@ -19,12 +19,10 @@ import { TrxTableComponent } from './trx-table/trx-table.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DisputeService } from './services/dispute-service';
 import { TransactionService } from './services/transaction-service';
-import { MainTabPanelComponent } from './main-tab-panel/main-tab-panel.component';
 import { TabViewModule } from 'primeng/primeng';
 import { SearchPanelComponent } from './search-panel/search-panel.component';
 import { DisputePanelComponent } from './dispute-panel/dispute-panel.component';
 import { TransactionPanelComponent } from './transaction-panel/transaction-panel.component';
-//import { EventEmitter } from '@angular/core';
 
 @NgModule({
   declarations: [
@@ -35,7 +33,6 @@ import { TransactionPanelComponent } from './transaction-panel/transaction-panel
     // SidebarComponent,
     DisputeTableComponent,
     TrxTableComponent,
-    MainTabPanelComponent,
     SearchPanelComponent,
     DisputePanelComponent,
     TransactionPanelComponent

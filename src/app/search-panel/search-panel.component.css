@@ -3,5 +3,6 @@
     -webkit-margin-after: 2em;
 }
 #searchButtons {
-    padding: 5px;
+    padding-top: 2px;
+    padding-bottom: 5px;
 }

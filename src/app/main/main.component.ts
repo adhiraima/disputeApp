@@ -12,37 +12,34 @@ export class MainComponent implements OnInit {
   private selectedPanel: string;
 
   constructor() {
+    console.log("constructor called");
     this.panels["search"] = "searchPanel";
-    this.panels["txn:tr1"] = "transactionPanel";
-    this.panels["dispute:d1"] = "disputePanel";
+    this.selectedPanel = "search";
   }
+
   ngOnInit() {
     console.log("Main loaded!!");
-  }
-
-  public addPanel(component: string, id:string) {
-    this.panels[component + ":" + id] = component;
-  }
-
-  public removePanel(index: number) {
-    this.panels
   }
 
   keys() : Array<string> {
     return Object.keys(this.panels);
   }
 
-  public showNewTxnTab(event) {
+  showNewTxnTab(event) {
     this.panels["txn:"+event.data.trxid] = "transactionPanel";
     this.selectedPanel = "txn:"+event.data.trxid;
   }
 
-  public showNewDispTab(event) {
+  showNewDispTab(event) {
     this.panels["dispute:"+event.data.disputeid] = "disputePanel";
     this.selectedPanel = "dispute:"+event.data.disputeid;
   }
 
-  selectTab(header) {
-    this.selectedPanel = header;
+  selectTab(event) {
+    this.selectedPanel = this.keys()[event.index];
+  }
+
+  checkSelected(header) {
+    return this.selectedPanel === header ? true : false;
   }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Dispute } from '../models/disputes';
+import { DisputeService } from '../services/dispute-service';
 
 @Component({
   selector: 'app-dispute-table',
@@ -14,14 +15,13 @@ export class DisputeTableComponent implements OnInit {
   @Output('dispRowClicked') 
   dispRowClicked = new EventEmitter<Dispute>(); 
   
-  constructor() { }
+  constructor(private disputeService: DisputeService) { }
   
-    ngOnInit() {
-  
-    }
-  
-    openNewDispTab(event) {
-      this.dispRowClicked.emit(event);
-    }
+  ngOnInit() {
+    this.disputes = this.disputeService.getCurrentDisputes();
+  }
 
+  openNewDispTab(event) {
+    this.dispRowClicked.emit(event);
+  }
 }

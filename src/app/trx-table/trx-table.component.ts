@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Transaction } from '../models/transaction';
+import { TransactionService } from '../services/transaction-service';
 
 @Component({
   selector: 'app-trx-table',
@@ -12,10 +13,12 @@ export class TrxTableComponent implements OnInit {
   @Output('txnRowClicked') 
   txnRowClicked = new EventEmitter<Transaction>(); 
   
-  constructor() { }
+  constructor(private transactionService: TransactionService) { 
+    console.log("trxn table called");
+  }
 
   ngOnInit() {
-
+    this.txns = this.transactionService.getCurrentTransactions();
   }
 
   openNewTxnTab(event) {
