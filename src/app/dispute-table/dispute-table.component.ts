@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Dispute } from '../models/disputes';
 
 @Component({
@@ -11,9 +11,17 @@ import { Dispute } from '../models/disputes';
 
 export class DisputeTableComponent implements OnInit {
   @Input() disputes: Dispute[];
-
-  ngOnInit() {
-    
-  }
+  @Output('dispRowClicked') 
+  dispRowClicked = new EventEmitter<Dispute>(); 
+  
+  constructor() { }
+  
+    ngOnInit() {
+  
+    }
+  
+    openNewDispTab(event) {
+      this.dispRowClicked.emit(event);
+    }
 
 }

@@ -1,4 +1,7 @@
 #search {
     -webkit-margin-before: 0em;
-    -webkit-margin-after: 0em;
+    -webkit-margin-after: 2em;
+}
+#searchButtons {
+    padding: 5px;
 }

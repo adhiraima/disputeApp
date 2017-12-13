@@ -1,13 +1,11 @@
 <div #search [style.height.px]="mainHeight" flexLayout="row">
-    
-      <div class="ui-g ui-fluid" flexLayout="column" fxLayoutGap="5px">
-    
-        <!-- <div class="ui-g-12 ui-md-4"> -->
+    <div flexLayout="row">
+      <div #searchFields>
+        <div class="ui-g ui-fluid" flexLayout="column" fxLayoutGap="0.5%" fxLayoutAlign="center">
           <div class="ui-inputgroup">
             <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
             <input type="text" pInputText placeholder="customerId" [(ngModel)]="customerID">         
           </div>
-        <!-- </div> -->
           <div class="ui-inputgroup">
             <span class="ui-inputgroup-addon"><i class="fa fa-phone"></i></span>
             <input type="text" pInputText placeholder="phone" [(ngModel)]="phone">         
@@ -16,38 +14,35 @@
             <span class="ui-inputgroup-addon"><i class="fa fa-id-card"></i></span>
             <input type="text" pInputText placeholder="account#" [(ngModel)]="account">         
           </div>
-        <!-- <div class="ui-g-12 ui-md-4"> -->
-            <div class="ui-inputgroup">
-              <span class="ui-inputgroup-addon">@</span>
-              <input type="text" pInputText placeholder="email" [(ngModel)]="email">         
-            </div>
-        <!-- </div> -->
-                
-        <!-- <div class="ui-g-12 ui-md-4"> -->
+          <div class="ui-inputgroup">
+            <span class="ui-inputgroup-addon">@</span>
+            <input type="text" pInputText placeholder="email" [(ngModel)]="email">         
+          </div>
           <div class="ui-inputgroup">
             <span class="ui-inputgroup-addon">From</span>
             <p-calendar [(ngModel)]="dateFrom" [showIcon]="true"></p-calendar>      
           </div>
-        <!-- </div> -->
-    
-        <!-- <div class="ui-g-12 ui-md-4"> -->
           <div class="ui-inputgroup">
             <span class="ui-inputgroup-addon">To</span>
             <p-calendar [(ngModel)]="dateTo" [showIcon]="true"></p-calendar>      
           </div>
-        <!-- </div> -->
-          <div  class="ui-inputgroup">
-              <button pButton type="button" (click)="search()" label="Go" class="ui-button-success"></button>
-          </div>
-    
-          <div  class="ui-inputgroup">
-              <button pButton type="button" (click)="clear()" label="Clear" class="ui-button-info"></button>
-          </div>
+        </div>
+        <br>
+        <div #searchButtons>
+            <div class="ui-g ui-fluid" flexLayout="column" fxLayoutGap="20px" fxLayoutAlign="center">
+              <div  class="ui-inputgroup">
+                  <button pButton type="button" (click)="searchForData()" label="Go" class="ui-button-success"></button>
+              </div>
+              <div  class="ui-inputgroup">
+                  <button pButton type="button" (click)="clear()" label="Clear" class="ui-button-info"></button>
+              </div>
+            </div>
+        </div>
       </div>
       <div>
-        <app-trx-table [txns]="transactions"></app-trx-table>
+        <app-trx-table [txns]="transactions" (txnRowClicked)="showNewTxnTab($event)"></app-trx-table>
       </div>
       <div>
-        <app-dispute-table [disputes]="disputes"></app-dispute-table>
+        <app-dispute-table [disputes]="disputes" (dispRowClicked)="showNewDispTab($event)"></app-dispute-table>
       </div>
     </div>

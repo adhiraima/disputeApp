@@ -24,6 +24,7 @@ import { TabViewModule } from 'primeng/primeng';
 import { SearchPanelComponent } from './search-panel/search-panel.component';
 import { DisputePanelComponent } from './dispute-panel/dispute-panel.component';
 import { TransactionPanelComponent } from './transaction-panel/transaction-panel.component';
+//import { EventEmitter } from '@angular/core';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { TransactionPanelComponent } from './transaction-panel/transaction-panel
     ButtonModule,
     DataTableModule,
     SharedModule,
-    TabViewModule
+    TabViewModule,
+    //EventEmitter
   ],
   providers: [
     DisputeService,

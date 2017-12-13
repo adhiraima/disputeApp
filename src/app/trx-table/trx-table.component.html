@@ -1,8 +1,9 @@
-<div>
-  <p-dataTable [value]="txns" [rows]="10" [paginator]="true" [pageLinks]="3">
+
+  <p-dataTable [value]="txns" [rows]="10" [paginator]="true" [pageLinks]="3" (onRowClick)="openNewTxnTab($event)">
     <p-header>Transactions</p-header>
     <p-column field="customerid" header="Customer#"></p-column>
-    <p-column field="trxid" header="Transaction #"></p-column>
+    <p-column field="trxid" header="Transaction #">
+    </p-column>
     <p-column field="trxdate" header="Date">
         <ng-template let-row="rowData" pTemplate="body">
           {{row.trxdate | date:'dd/MM/yyyy'}}
@@ -15,4 +16,3 @@
     <p-column field="benificairy" header="Benificiary"></p-column>
     <p-column field="accountno" header="Account#"></p-column>
   </p-dataTable>
-</div>

@@ -1,5 +1,5 @@
 <div>
-  <p-dataTable [value]="disputes" [rows]="4" [paginator]="true" [pageLinks]="3">
+  <p-dataTable [value]="disputes" [rows]="4" [paginator]="true" [pageLinks]="3" (onRowClick)="openNewDispTab($event)">
     <p-header>Disputes</p-header>
     <p-column field="customerid" header="Customer #"></p-column>
     <p-column field="disputeid" header="Dispute #"></p-column>

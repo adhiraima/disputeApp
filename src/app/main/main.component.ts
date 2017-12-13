@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Dispute } from '../models/disputes';
-import { Transaction } from '../models/transaction'
-import { DisputeService } from '../services/dispute-service';
-import { TransactionService } from '../services/transaction-service';
-import { DisputeTableComponent } from '../dispute-table/dispute-table.component'
+import { _ } from 'underscore';
+import { Hash } from 'underscore'
 
 @Component({
   selector: 'app-main',
@@ -11,48 +8,41 @@ import { DisputeTableComponent } from '../dispute-table/dispute-table.component'
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
-  mainHeight: number;
-  searchWidth: number;
-  searchFieldsWidth: number;
-  searchFields: string[];
-  dateFrom: Date;
-  dateTo: Date;
-  customerID: string;
-  phone: string;
-  email: string;
-  account: string;
-  transactions: Transaction[];
-  disputes: Dispute[];
-  disputesPageNum: number;
-  trxnPageNum: number;
+  private panels = {};
+  private selectedPanel: string;
 
-  constructor(private disputeService: DisputeService, 
-      private transactionService: TransactionService) { 
-    this.mainHeight = (window.innerHeight * 90) / 100;
-    this.searchWidth = 90;
-    this.searchFields = ["customerID", "phone", "email", "firstName", "lastName"];
-    this.searchFieldsWidth = 18;
-    this.disputesPageNum = 1;
-    this.trxnPageNum = 1;
+  constructor() {
+    this.panels["search"] = "searchPanel";
+    this.panels["txn:tr1"] = "transactionPanel";
+    this.panels["dispute:d1"] = "disputePanel";
   }
-
   ngOnInit() {
     console.log("Main loaded!!");
   }
 
-  search() {
-    this.disputes = this.disputeService.getDisputes(this.disputesPageNum);
-    this.transactions = this.transactionService.getTransactions(this.trxnPageNum);
+  public addPanel(component: string, id:string) {
+    this.panels[component + ":" + id] = component;
   }
 
-  clear() {
-    this.email = "";  
-    this.customerID = "";
-    this.phone = "";
-    this.dateFrom = null;
-    this.dateTo = null;
-    this.account = "";
-    this.transactions = [];
-    this.disputes = [];
+  public removePanel(index: number) {
+    this.panels
+  }
+
+  keys() : Array<string> {
+    return Object.keys(this.panels);
+  }
+
+  public showNewTxnTab(event) {
+    this.panels["txn:"+event.data.trxid] = "transactionPanel";
+    this.selectedPanel = "txn:"+event.data.trxid;
+  }
+
+  public showNewDispTab(event) {
+    this.panels["dispute:"+event.data.disputeid] = "disputePanel";
+    this.selectedPanel = "dispute:"+event.data.disputeid;
+  }
+
+  selectTab(header) {
+    this.selectedPanel = header;
   }
 }

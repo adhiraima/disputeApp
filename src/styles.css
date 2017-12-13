@@ -1,11 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
-div.ui-datatable.ui-widget {
+div.ui-datatable.ui-widget  {
     font-size: 0.8em;
 }
+
+div.ui-datatable.ui-widget :hover {
+    background-color: cyan;
+    cursor: pointer;
+}
+
+tr.ui-datatable-even :hover {
+    background-color: cyan;
+    cursor: pointer;
+}
+
+tr.ui-datatable-odd :hover {
+    background-color: cyan;
+    cursor: pointer;
+}
 span.ui-inputgroup-addon {
-    font-size: 11px;
+    font-size: 10px;
 }
 input, select, textarea {
-    font-size: 10px;
+    font-size: 11px;
     line-height: 8px;
+}
+.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button {
+    font-size: 0.8em;
+}
+.ui-fluid .ui-calendar.ui-calendar-w-btn .ui-inputtext {
+    width: calc(90% - 10em);
 }
