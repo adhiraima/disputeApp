@@ -1,0 +1,16 @@
+<div>
+  <p-dataTable [value]="disputes" [rows]="4" [paginator]="true" [pageLinks]="3">
+    <p-header>Disputes</p-header>
+    <p-column field="customerid" header="Customer #"></p-column>
+    <p-column field="disputeid" header="Dispute #"></p-column>
+    <p-column field="createdOn" header="Date Created">
+      <ng-template let-row="rowData" pTemplate="body">
+        {{row.createdOn | date:'dd/MM/yyyy'}}
+      </ng-template>
+    </p-column>
+    <p-column field="createdBy" header="Agent"></p-column>
+    <p-column field="disputeamount" header="Amount"></p-column>
+    <p-column field="status" header="Status"></p-column>
+    <p-column field="transaction" header="Transaction #"></p-column>
+  </p-dataTable>
+</div>

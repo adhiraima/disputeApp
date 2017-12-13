@@ -1,0 +1,7 @@
+p {
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    background-color: blue;
+    padding-top: 5px;
+    -webkit-text-fill-color: white;
+}

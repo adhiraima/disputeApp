@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+div.ui-datatable.ui-widget {
+    font-size: 0.8em;
+}
+span.ui-inputgroup-addon {
+    font-size: 11px;
+}
+input, select, textarea {
+    font-size: 10px;
+    line-height: 8px;
+}

@@ -1,0 +1,56 @@
+[
+    {
+        "disputeid": "d1",
+        "createdOn": "1/10/2017",
+        "createdBy": "Adhir",
+        "status": "RESOLVED",
+        "transaction": "tr4",
+        "customerid": "33445566",
+        "disputeamount": 2000
+    },
+    {
+        "disputeid": "d2",
+        "createdOn": "11/10/2017",
+        "createdBy": "Adhir",
+        "status": "RESOLVED",
+        "transaction": "tr42",
+        "customerid": "33445566",
+        "disputeamount": 200
+    },
+    {
+        "disputeid": "d3",
+        "createdOn": "14/10/2017",
+        "createdBy": "Adhir",
+        "status": "RESOLVED",
+        "transaction": "tr56",
+        "customerid": "33445566",
+        "disputeamount": 20
+    },
+    {
+        "disputeid": "d4",
+        "createdOn": "24/10/2017",
+        "createdBy": "Adhir",
+        "status": "RESOLVED",
+        "transaction": "tr77",
+        "customerid": "33445566",
+        "disputeamount": 212
+    },
+    {
+        "disputeid": "d5",
+        "createdOn": "30/10/2017",
+        "createdBy": "Adhir",
+        "status": "RESOLVED",
+        "transaction": "tr88",
+        "customerid": "33445566",
+        "disputeamount": 223
+    },
+    {
+        "disputeid": "d6",
+        "createdOn": "11/12/2017",
+        "createdBy": "Adhir",
+        "status": "OPEN",
+        "transaction": "tr4",
+        "customerid": "33445566",
+        "disputeamount": 53400
+    }
+  ]

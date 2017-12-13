@@ -1,0 +1,18 @@
+<div>
+  <p-dataTable [value]="txns" [rows]="10" [paginator]="true" [pageLinks]="3">
+    <p-header>Transactions</p-header>
+    <p-column field="customerid" header="Customer#"></p-column>
+    <p-column field="trxid" header="Transaction #"></p-column>
+    <p-column field="trxdate" header="Date">
+        <ng-template let-row="rowData" pTemplate="body">
+          {{row.trxdate | date:'dd/MM/yyyy'}}
+        </ng-template>
+    </p-column>
+    <p-column field="mode" header="mode"></p-column>
+    <p-column field="amount" header="Amount"></p-column>
+    <p-column field="status" header="Status"></p-column>
+    <p-column field="requester" header="Requester"></p-column>
+    <p-column field="benificairy" header="Benificiary"></p-column>
+    <p-column field="accountno" header="Account#"></p-column>
+  </p-dataTable>
+</div>

@@ -1,0 +1,133 @@
+[
+    {
+      "trxid": "tr1", 
+      "trxdate": "1/12/2018",
+      "mode": "ATM",
+      "status": "COMPLETED",
+      "requester": "SELF",
+      "benificairy": "SELF",
+      "accountno": "123456789",
+      "customerid": "33445566",
+      "amount": 20000
+    },
+    {
+      "trxid": "tr2", 
+      "trxdate": "2/12/2018",
+      "mode": "ATM",
+      "status": "COMPLETED",
+      "requester": "SELF",
+      "benificairy": "SELF",
+      "accountno": "123456789",
+      "customerid": "33445566",
+      "amount": 2000
+    },
+    {
+      "trxid": "tr3", 
+      "trxdate": "3/12/2018",
+      "mode": "ONLINE_SHOPPING",
+      "status": "PENDING",
+      "requester": "SELF",
+      "benificairy": "AMAZON",
+      "accountno": "123456789",
+      "customerid": "33445566",
+      "amount": 1984
+    },{
+      "trxid": "tr4", 
+      "trxdate": "4/12/2018",
+      "mode": "TRANSFER",
+      "status": "COMPLETED",
+      "requester": "SELF",
+      "benificairy": "CLAY EDUCATION",
+      "accountno": "123456789",
+      "customerid": "33445566",
+      "amount": 53400
+    },
+    {
+      "trxid": "tr5", 
+      "trxdate": "5/12/2018",
+      "mode": "CHEQUE",
+      "status": "COMPLETED",
+      "requester": "SELF",
+      "benificairy": "BRIGADE DEVELOPERS",
+      "accountno": "123456789",
+      "customerid": "33445566",
+      "amount": 200000
+    },
+    {
+      "trxid": "tr6", 
+      "trxdate": "6/12/2018",
+      "mode": "UPI",
+      "status": "COMPLETED",
+      "requester": "SELF",
+      "benificairy": "BARRELS WINES",
+      "accountno": "123456789",
+      "customerid": "33445566",
+      "amount": 200
+    },
+    {
+      "trxid": "tr6_2", 
+      "trxdate": "6/12/2018",
+      "mode": "UPI",
+      "status": "COMPLETED",
+      "requester": "SELF",
+      "benificairy": "BARRERLS WINES",
+      "accountno": "123456789",
+      "customerid": "33445566",
+      "amount": 200
+    },
+    {
+      "trxid": "tr7", 
+      "trxdate": "7/12/2018",
+      "mode": "ONLINE",
+      "status": "COMPLETED",
+      "requester": "SELF",
+      "benificairy": "FLIPKART",
+      "accountno": "123456789",
+      "customerid": "33445566",
+      "amount": 23000
+    },
+    {
+      "trxid": "tr8", 
+      "trxdate": "8/12/2018",
+      "mode": "PAYTM",
+      "status": "COMPLETED",
+      "requester": "SELF",
+      "benificairy": "BESCOM",
+      "accountno": "123456789",
+      "customerid": "33445566",
+      "amount": 778
+    },
+    {
+      "trxid": "tr8_2", 
+      "trxdate": "8/12/2018",
+      "mode": "PAYTM",
+      "status": "COMPLETED",
+      "requester": "SELF",
+      "benificairy": "AIRTEL",
+      "accountno": "123456789",
+      "customerid": "33445566",
+      "amount": 447
+    },
+    {
+      "trxid": "tr9", 
+      "trxdate": "1/12/2018",
+      "mode": "POS",
+      "status": "COMPLETED",
+      "requester": "SELF",
+      "benificairy": "TOIT BAR",
+      "accountno": "123456789",
+      "customerid": "33445566",
+      "amount": 2345
+    },
+    {
+      "trxid": "tr9_2", 
+      "trxdate": "1/12/2018",
+      "mode": "POS",
+      "status": "COMPLETED",
+      "requester": "SELF",
+      "benificairy": "TOIT BAR",
+      "accountno": "123456789",
+      "customerid": "33445566",
+      "amount": 2345
+    }
+  ]
