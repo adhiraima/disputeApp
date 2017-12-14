@@ -2,13 +2,16 @@
   <div *ngFor="let key of keys();">
     <p-tabPanel header="{{key}}" [closable]="key !== 'search'" [selected]="key === selectedPanel">
       <div *ngIf="panels[key] === 'searchPanel' && key === selectedPanel">
-        <app-search-panel (openMainTxnTab)="showNewTxnTab($event)" (openMainDispTab)="showNewDispTab($event)"></app-search-panel>
+        <app-search-panel (openMainTxnTab)="showNewTxnTab($event)" 
+          (openMainDispTab)="showNewDispTab($event)" 
+          (clearSearch)="closeRelatedTabs()"
+        ></app-search-panel>
       </div>
       <div *ngIf="key.startsWith('txn') && key === selectedPanel">
-        <app-transaction-panel></app-transaction-panel>
+        <app-transaction-panel [transaction]="currTxn"></app-transaction-panel>
       </div>
       <div *ngIf="key.startsWith('dispute') && key === selectedPanel">
-        <app-dispute-panel></app-dispute-panel>
+        <app-dispute-panel [dispute]="currDisp"></app-dispute-panel>
       </div>
     </p-tabPanel>
   </div>

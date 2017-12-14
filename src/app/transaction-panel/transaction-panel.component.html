@@ -1,3 +1,14 @@
-<p>
-  transaction-panel works!
-</p>
+<div>
+  <table class="table table-responsive">
+      <tbody>
+        <tr *ngFor="let key of keys()">
+          <td> {{key}} </td> <td> {{transaction[key]}} </td>
+        </tr>
+        <tr>
+          <td>
+              <button pButton type="button" (click)="createDispute()" label="CREATE DISPUTE" class="ui-button-success"></button>
+          </td>
+        </tr>
+      </tbody>
+  </table>
+</div>

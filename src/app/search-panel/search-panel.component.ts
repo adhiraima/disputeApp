@@ -31,6 +31,9 @@ export class SearchPanelComponent implements OnInit {
   @Output('openMainDispTab')
   openMainDispTab = new EventEmitter<Dispute>();
 
+  @Output('clearSearch')
+  clearSearch = new EventEmitter();
+
   constructor(private disputeService: DisputeService, 
       private transactionService: TransactionService) { 
     this.mainHeight = (window.innerHeight * 90) / 100;
@@ -60,6 +63,7 @@ export class SearchPanelComponent implements OnInit {
     this.disputes = [];
     this.transactionService.clearCurrentTransactions();
     this.disputeService.clearCurrentDisputes();
+    this.clearSearch.emit();
   }
 
   showNewTxnTab(event) {

@@ -23,6 +23,7 @@ import { TabViewModule } from 'primeng/primeng';
 import { SearchPanelComponent } from './search-panel/search-panel.component';
 import { DisputePanelComponent } from './dispute-panel/dispute-panel.component';
 import { TransactionPanelComponent } from './transaction-panel/transaction-panel.component';
+import { DisputeFormComponent } from './dispute-form/dispute-form.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { TransactionPanelComponent } from './transaction-panel/transaction-panel
     TrxTableComponent,
     SearchPanelComponent,
     DisputePanelComponent,
-    TransactionPanelComponent
+    TransactionPanelComponent,
+    DisputeFormComponent
   ],
   imports: [
     BrowserModule,

@@ -15,9 +15,12 @@ export class DisputeTableComponent implements OnInit {
   @Output('dispRowClicked') 
   dispRowClicked = new EventEmitter<Dispute>(); 
   
-  constructor(private disputeService: DisputeService) { }
+  constructor(private disputeService: DisputeService) { 
+    console.log("constructoe in disp panel called");
+  }
   
   ngOnInit() {
+    console.log("init called in dispute panel");
     this.disputes = this.disputeService.getCurrentDisputes();
   }
 

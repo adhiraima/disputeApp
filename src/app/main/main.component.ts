@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { _ } from 'underscore';
 import { Hash } from 'underscore'
+import { Transaction } from '../models/transaction';
+import { Dispute } from '../models/disputes';
 
 @Component({
   selector: 'app-main',
@@ -10,6 +12,8 @@ import { Hash } from 'underscore'
 export class MainComponent implements OnInit {
   private panels = {};
   private selectedPanel: string;
+  private currTxn: Transaction;
+  private currDisp: Dispute;
 
   constructor() {
     console.log("constructor called");
@@ -28,11 +32,13 @@ export class MainComponent implements OnInit {
   showNewTxnTab(event) {
     this.panels["txn:"+event.data.trxid] = "transactionPanel";
     this.selectedPanel = "txn:"+event.data.trxid;
+    this.currTxn = event.data;
   }
 
   showNewDispTab(event) {
     this.panels["dispute:"+event.data.disputeid] = "disputePanel";
     this.selectedPanel = "dispute:"+event.data.disputeid;
+    this.currDisp = event.data;
   }
 
   selectTab(event) {
@@ -41,5 +47,10 @@ export class MainComponent implements OnInit {
 
   checkSelected(header) {
     return this.selectedPanel === header ? true : false;
+  }
+
+  closeRelatedTabs() {
+    this.panels = {};
+    this.panels["search"] = "searchPanel";
   }
 }

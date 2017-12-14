@@ -1,3 +1,18 @@
-<p>
-  dispute-panel works!
-</p>
+<div>
+    <table class="table table-responsive">
+      <tbody>
+        <tr *ngFor="let key of keys()">
+          <td> {{key}} </td> <td> {{dispute[key]}} </td>
+        </tr>
+        <tr>
+          <td *ngIf="dispute['status'].toUpperCase() !== 'RESOLVED'">
+              <button pButton type="button" (click)="resolveDispute()" label="RESOLVE" class="ui-button-success"></button>
+          </td>
+          <td *ngIf="dispute['status'].toUpperCase() === 'RESOLVED'">
+              <button pButton type="button" (click)="reopenDispute()" label="RE-OPEN" class="ui-button-success"></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+      
+  </div>
